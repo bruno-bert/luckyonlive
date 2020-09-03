@@ -11,6 +11,11 @@ export const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  & > * {
+    margin-top: 5rem;
+  } 
+
 `
 
 export const Logo = styled.img`

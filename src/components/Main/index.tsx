@@ -1,21 +1,71 @@
 import * as S from './styles'
+import Input from "../Input"
+import Button from "../Button"
+import Card from "../Card"
+import { useState, useRef} from "react"
 
-const Main = ({
-  title = 'React Avançado',
-  description = 'TypeScript, ReactJS, NextJS e Styled Components'
-}) => (
-  <S.Wrapper>
-    <S.Logo
-      src="/img/logo.svg"
-      alt="Imagem de um átomo e React Avançado escrito ao lado."
-    />
-    <S.Title>{title}</S.Title>
-    <S.Description>{description}</S.Description>
-    <S.Illustration
-      src="/img/hero-illustration.svg"
-      alt="Um desenvolvedor de frente para uma tela com código."
-    />
-  </S.Wrapper>
-)
+import axios from "axios"
+
+
+const Main = () =>{
+
+  const [user, setUser] = useState(null)
+  const [url, setUrl] = useState('')
+  const [loading, setLoading] = useState(false)
+  //const inputRef = useRef()
+
+  const handleInputChange = (e: FormEvent) => {
+    setUrl(e.target.value);
+  }
+
+  const handleButtonClick = ()=>{
+
+    if (!url) return
+
+    setUser(null)
+    setLoading(true)
+   
+      axios.post('/request', {
+        url
+      }).then(response =>{
+        setUser(response.data.result)
+        console.log('response', response.data)
+
+      })
+      .catch(err=>{
+        console.log('Error on trying to pick user', err);
+      })
+      .finally(()=>{
+        setLoading(false)
+        setUrl('')
+        //inputRef.current?.focus()
+      })
+    } 
+   
+  
+
+  return (
+    <S.Wrapper>
+      <S.Logo
+        src="/img/logo.svg"
+        alt="Imagem de uma caixa de presentes vermelha com um laço azul claro."
+      />
+       <S.Title>Welcome to Lucky In Live!</S.Title>
+      
+      <Input value={url}
+       onChange={handleInputChange}
+       //ref={inputRef} 
+       name="url" 
+       placeholder="https://www.youtube.com/watch?v=XXXXXXXX" 
+       helper="Copy your Youtube Live Url from the Address Bar and Paste It Here (Format https://www.youtube.com/watch?v=XXXXXXXX )"  />    
+
+      <Button onClick={handleButtonClick}>Pick a User</Button>
+
+      {user && <Card description="And The Winner is...">{user}</Card>}
+  
+    </S.Wrapper>
+  )
+
+} 
 
 export default Main
