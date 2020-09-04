@@ -3506,6 +3506,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-notifications-component@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@types/react-notifications-component/-/react-notifications-component-2.4.0.tgz#b70516a7f17d83ee86843a8940866153735412a0"
+  integrity sha512-MT+QOXgoskK76oRFTj8cO5ImWhE7KuSvmHj96dOgSSmJfiACZnaOOPoYPFuXr5rGBXVwYNE9o5iWMv115uGlkw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-syntax-highlighter@11.0.4":
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.4.tgz#d86d17697db62f98046874f62fdb3e53a0bbc4cd"
@@ -11936,6 +11943,21 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-loader-spinner@^3.1.14:
+  version "3.1.14"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-3.1.14.tgz#2a201f07379c492766175609903c0f2ced57c720"
+  integrity sha512-7V+upnW+RVA/O94LIB/EQLK2uaz/TpZBHG5uNXlOXgvxvALxlxVYeEDmus5Oex2C58fiwrsRvSyu/4VRmLbZ9Q==
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.7.2"
+
+react-notifications-component@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-notifications-component/-/react-notifications-component-2.4.0.tgz#21603c9cfa517a986b58e2c46e384d3cd299d325"
+  integrity sha512-0IhtgqAmsKSyjY1wBUxciUVXiYGRr5BRdn67pYDlkqq9ORF98NZekpG7/MNX0BzzfGvt9Wg7rFhT1BtwOvvLLg==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-popper-tooltip@^2.11.0:
   version "2.11.1"

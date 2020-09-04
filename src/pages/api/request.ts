@@ -6,7 +6,8 @@ type Data = {
 
 export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
   
-
+  console.log("Starting request...")
+ 
   if (req.method !== "POST"){
     res.status(400).json( { result: "method not supported"})
   }
@@ -17,8 +18,7 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
   let {url} = req.body;
   url = url.replace(/watch/,'live_chat');
-  console.log(url)
- 
+  
   try{
 
     const puppeteer = require('puppeteer')
@@ -42,6 +42,8 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
           }
         ) 
       })  
+
+      
       browser.close()
 
       const filtered = result.filter( (item: any, index: number) => { return (item!=null && result.indexOf(item)===index ) })
@@ -53,13 +55,13 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
      run().then(result=>{     
       res.status(200).json({result})
      }).catch((err: any)=>{
-       
-      res.status(400).send({result: err});
+      console.log("Error on request", err.toString()) 
+      res.status(400).send({result: err.toString()});
      }); 
 
 
   }catch(error){
-    
+    console.log("Error on request", error)
     res.status(400).send({result: error});
   }
  

@@ -18,4 +18,11 @@ cursor: pointer;
 &:focus {
    outline: none;
 }
+
+&:disabled {
+    color: #8c8a89;
+    background-color: #c9c6c5;
+    cursor: revert;
+    
+}
 `;

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.main`
-  background-color: #ced0e3;
+  
   color: #fff;
-  width: 100%;
-  height: 100%;
+ 
   padding: 3rem;
   text-align: center;
   display: flex;
