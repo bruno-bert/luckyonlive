@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { ButtonComponentProps } from '.';
+import { ButtonProps } from '.';
 
-export const Button = styled.button<ButtonComponentProps>`
+export const Button = styled.button<ButtonProps>`
 padding: 10px 36px;
 color: white;
 font-size: 1.8rem;
