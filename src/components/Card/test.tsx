@@ -4,7 +4,7 @@ import Card from '.'
 
 describe('<Card />', () => {
   it('should render the heading', () => {
-    const { container } = render(<Card />)
+    const { container } = render(<Card description="test"/>)
 
     expect(screen.getByRole('heading', { name: /Card/i })).toBeInTheDocument()
 

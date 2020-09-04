@@ -19,7 +19,8 @@ const Main = () =>{
     setUrl(e.target.value);
   }
 
-  const handleButtonClick = (e)=>{  
+  const handleButtonClick = (e: any)=>{  
+    
     e.preventDefault()
     let message
     if (!url) {
