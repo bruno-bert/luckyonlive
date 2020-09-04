@@ -1,9 +1,12 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Input from '.'
+import Input, { InputProps } from '.'
 
 export default {
   title: 'Input',
-  component: Input
+  component: Input,
+  args: {
+    name: 'test'
+  } 
 } as Meta
 
-export const Default: Story = () => <Input />
+export const Default: Story<InputProps> = (args) => <Input {...args}/>

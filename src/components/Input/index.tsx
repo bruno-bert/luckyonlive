@@ -1,17 +1,16 @@
 import * as S from './styles'
 import {InputHTMLAttributes} from "react";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement>  {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement>  {
   name: string
   label?: string
-  helper?: string,
-  inputRef?: any
+  helper?: string
 }
 
-const Input: React.FC<InputProps> = ({name, label, helper, inputRef, ...otherProps}) => (
+const Input: React.FC<InputProps> = ({name, label, helper, ...otherProps}) => (
   <S.Wrapper>
     {label && <label htmlFor={name}>{label}</label>}
-    <input ref={inputRef} type="text" {...otherProps} />
+    <input type="text" {...otherProps} />
     {helper && <p style={{marginTop: '10px'}}>{helper}</p> }
   </S.Wrapper>
 )

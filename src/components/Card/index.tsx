@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-type CardProps = {
+export type CardProps = {
   children?: HTMLCollection | string,
   description: string
 }
