@@ -14,7 +14,7 @@ const Main = () =>{
   const [loading, setLoading] = useState(false)
   //const inputRef = useRef()
 
-  const handleInputChange = (e: FormEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUrl(e.target.value);
   }
 
@@ -51,6 +51,15 @@ const Main = () =>{
         alt="Imagem de uma caixa de presentes vermelha com um laço azul claro."
       />
        <S.Title>Welcome to Lucky In Live!</S.Title>
+
+       <S.Description>
+         Easily pick a random user that is chatting during your YouTube Live Transmission
+         <br />
+
+         <p><b>ATTENTION:</b> To be eligible, the user must be chatting. Only participate on the live is not enought.</p>
+
+       </S.Description>
+      
       
       <Input value={url}
        onChange={handleInputChange}

@@ -1,7 +1,6 @@
 import * as S from './styles'
-import {ButtonHTMLAttributes} from "react";
 
-type ButtonComponentProps = {
+export type ButtonComponentProps = {
   children?: HTMLCollection | string,
   onClick: (e?: React.MouseEvent) => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;

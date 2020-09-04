@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.main`
-  background-color: #06092b;
+  background-color: #ced0e3;
   color: #fff;
   width: 100%;
   height: 100%;
@@ -27,9 +27,16 @@ export const Title = styled.h1`
   font-size: 2.5rem;
 `
 
-export const Description = styled.h2`
+export const Description = styled.div`
   font-size: 2rem;
   font-weight: 400;
+  line-height:3rem;
+
+  p{
+    font-size: 1.3rem;
+  }
+
+  
 `
 
 export const Illustration = styled.img`

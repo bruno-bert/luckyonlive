@@ -8,7 +8,7 @@ type CardProps = {
 const Card = ({description, children}: CardProps) => (
   <S.Wrapper>
     <h3>{description}</h3>
-    {children}
+    <p>{children}</p>
   </S.Wrapper>
 )
 
