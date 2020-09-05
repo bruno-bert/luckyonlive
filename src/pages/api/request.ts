@@ -53,6 +53,18 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
       const index = getRandomInt(0,filtered.length)
       return filtered[index]  */
 
+      const { exec } = require('child_process');
+exec('ls', (err: any, stdout : any, stderr : any) => {
+  if (err) {
+    //some err occurred
+    console.error(err)
+  } else {
+   // the *entire* stdout and stderr (buffered)
+   console.log(`stdout: ${stdout}`);
+   console.log(`stderr: ${stderr}`);
+  }
+});
+
       return puppeteer.executablePath()
      
     }  
