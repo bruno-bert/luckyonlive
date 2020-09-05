@@ -29,7 +29,7 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
       
       const selector = 'span[id=author-name]'
       //({headless:  false}
-      const browser = await puppeteer.launch()
+      const browser = await puppeteer.launch({product: 'firefox' })
       const page = await browser.newPage()
       await page.goto(url, { waitUntil: 'networkidle0' })
  

@@ -20,3 +20,12 @@
 #### Back-End
 [ ] use axios get instead of pupeteer to improve performance
 [ ] implement process to Twitch TV 
+
+##to check
+husky hook not working anymore
+workaround: removed from package.json
+ "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },

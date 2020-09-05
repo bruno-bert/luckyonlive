@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-vercel": "PUPPETEER_PRODUCT=firefox next build",
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "test": "jest",
@@ -13,11 +14,7 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+ 
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
