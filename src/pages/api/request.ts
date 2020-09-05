@@ -29,10 +29,10 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
       
       const selector = 'span[id=author-name]'
 
-      //pupeteer
+      
       //({headless:  false}
-      console.log('exec', puppeteer.executablePath())
-  /*      const browser = await puppeteer.launch()
+      console.log('exec', puppeteer.executablePath({executablePath: './node_modules/puppeteer/.local-chromium/linux-782078/chrome-linux/chrome'}))
+       const browser = await puppeteer.launch()
       const page = await browser.newPage()
       await page.goto(url, { waitUntil: 'networkidle0' })
  
@@ -45,15 +45,15 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
           }
         ) 
       })  
-      browser.close()  */
+      browser.close()  
 
  
 
-     /*   const filtered = result.filter( (item: any, index: number) => { return (item!=null && result.indexOf(item)===index ) })
+        const filtered = result.filter( (item: any, index: number) => { return (item!=null && result.indexOf(item)===index ) })
       const index = getRandomInt(0,filtered.length)
-      return filtered[index]  */
+      return filtered[index]  
 
-      const { exec } = require('child_process');
+/*       const { exec } = require('child_process');
 exec('ls', (err: any, stdout : any, stderr : any) => {
   if (err) {
     //some err occurred
@@ -63,7 +63,7 @@ exec('ls', (err: any, stdout : any, stderr : any) => {
    console.log(`stdout: ${stdout}`);
    console.log(`stderr: ${stderr}`);
   }
-});
+}); */
 
       return puppeteer.executablePath()
      
