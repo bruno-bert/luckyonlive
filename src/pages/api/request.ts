@@ -28,8 +28,10 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
       let result: any
       
       const selector = 'span[id=author-name]'
+
+      //pupeteer
       //({headless:  false}
-      const browser = await puppeteer.launch()
+       const browser = await puppeteer.launch({args: ['--no-sandbox']})
       const page = await browser.newPage()
       await page.goto(url, { waitUntil: 'networkidle0' })
  
@@ -42,13 +44,13 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
           }
         ) 
       })  
+      browser.close() 
 
-      
-      browser.close()
+ 
 
-      const filtered = result.filter( (item: any, index: number) => { return (item!=null && result.indexOf(item)===index ) })
+       const filtered = result.filter( (item: any, index: number) => { return (item!=null && result.indexOf(item)===index ) })
       const index = getRandomInt(0,filtered.length)
-      return filtered[index]
+      return filtered[index] 
      
     }  
 
