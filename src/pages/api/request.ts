@@ -32,7 +32,7 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
       
       //({headless:  false}
       console.log('exec-before', puppeteer.executablePath())
-       const browser = await puppeteer.launch({executablePath: './node_modules/puppeteer/.local-chromium/linux-782078/chrome-linux/chrome'})
+       const browser = await puppeteer.launch({executablePath: process.env.CHROMIUM_PATH})
        console.log('exec-after', puppeteer.executablePath())
       const page = await browser.newPage()
       await page.goto(url, { waitUntil: 'networkidle0' })
