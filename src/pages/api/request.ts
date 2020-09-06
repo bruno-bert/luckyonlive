@@ -29,11 +29,12 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
       
       const selector = 'span[id=author-name]'
 
-      
+    /*   
       //({headless:  false}
-      console.log('exec-before', puppeteer.executablePath())
-       const browser = await puppeteer.launch({executablePath: process.env.CHROMIUM_PATH})
-       console.log('exec-after', puppeteer.executablePath())
+      //console.log('exec-before', puppeteer.executablePath())
+       const browser = await puppeteer.launch()
+       //const browser = await puppeteer.launch({executablePath: process.env.CHROMIUM_PATH})
+       //console.log('exec-after', puppeteer.executablePath())
       const page = await browser.newPage()
       await page.goto(url, { waitUntil: 'networkidle0' })
  
@@ -46,16 +47,16 @@ export default  (req: NextApiRequest, res: NextApiResponse<Data>) => {
           }
         ) 
       })  
-      browser.close()  
+      browser.close()   */
 
  
-
+/* 
         const filtered = result.filter( (item: any, index: number) => { return (item!=null && result.indexOf(item)===index ) })
       const index = getRandomInt(0,filtered.length)
-      return filtered[index]  
+      return filtered[index]   */
 
-/*       const { exec } = require('child_process');
-exec('ls', (err: any, stdout : any, stderr : any) => {
+      const { exec } = require('child_process');
+exec('lsb_release -a', (err: any, stdout : any, stderr : any) => {
   if (err) {
     //some err occurred
     console.error(err)
@@ -64,9 +65,11 @@ exec('ls', (err: any, stdout : any, stderr : any) => {
    console.log(`stdout: ${stdout}`);
    console.log(`stderr: ${stderr}`);
   }
-}); */
+});
 
-      return puppeteer.executablePath()
+return "teste";
+     // return puppeteer.executablePath()
+      
      
     }  
 
