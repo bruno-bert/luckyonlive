@@ -37,7 +37,7 @@ const Main = () =>{
       setError(message)
       return
     }
-
+ 
     if (/^(http(s)??\:\/\/)?(www\.)?((youtube\.com\/watch\?v=)|(youtu.be\/))([a-zA-Z0-9\-_])+$/.test(url)===false) {
       message = 'URL format is invalid'
      
@@ -52,19 +52,19 @@ const Main = () =>{
       setError(message)
       setUrl('')
       return
-    }
+    } 
 
     setUser(null)
     setLoading(true)
    
       axios.post('/request', {
         url
+     // axios.post('/bash', {
+     //   command: url
       }).then(response =>{
         
         
-        
-        console.log('response', response.data)
-
+        console.log('response', response)
 
         if (response.data.result){
           setUser(response.data.result)
@@ -123,7 +123,6 @@ const Main = () =>{
      
       <Input value={url}
        onChange={handleInputChange}
-       //ref={inputRef} 
        name="url" 
        placeholder="https://www.youtube.com/watch?v=XXXXXXXX" 
        helper="Copy your Youtube Live Url from the Address Bar and Paste It Here (Format https://www.youtube.com/watch?v=XXXXXXXX )"  />    

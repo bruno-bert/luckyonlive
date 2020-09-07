@@ -7,7 +7,7 @@
 [x] handling empty result from server
 [x] fix loading to the button
 [x] fix the reponsiveness on mobile
-[ ] publish on Vercel
+[x] publish on Vercel
 
 
 ### Other Sprints
