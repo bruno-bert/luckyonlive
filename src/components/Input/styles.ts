@@ -8,28 +8,32 @@ export const Wrapper = styled.div`
   input {
     display: block;
     margin: 0;
-    padding: 0.8rem 1.6rem;
-    color: #06092b;
+    padding: 1.2rem 1.6rem;
+    color: white;
+    text-align: center;
+    background-color: #363534;
     width: 100%;
     font-family: inherit;
-    font-size: 2.1rem;
+    font-size: 1.6rem;
     font-weight: inherit;
     line-height: 1.8rem;
     border: none;
-    border-radius: 0.4rem;
+    border-radius: 0.5rem;
     transition: box-shadow 300ms;
   }
   
   input::placeholder {
-    color: #B0BEC5;
+    color: #fefefe;
+    font-size: 1.2rem;
+    text-align: center;
   }
   
   input:focus {
     outline: none;
-    box-shadow: 0.2rem 0.2rem 1.0rem #5e35b1;
+    border: 2px solid #FE4F60;
   }
 
   p {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
   }
 `

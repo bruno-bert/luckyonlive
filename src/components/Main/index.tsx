@@ -108,16 +108,12 @@ const Main = () =>{
   return (
     <S.Wrapper>
      
-      <S.Logo
-        src="/img/logo.svg"
-        alt="Imagem de uma caixa de presentes vermelha com um laço azul claro."
-      />
-       <S.Title>Welcome to Lucky In Live!</S.Title>
+  
+       <S.Title>Random drawing of Youtube Live Participants</S.Title>
 
        <S.Description>
-         Easily pick a random user that is chatting during your YouTube Live Transmission
-         <br />
-         <p><b>ATTENTION:</b> Warn your participants! To be eligible, the user <b>MUST be chatting</b>. Only be watching the live is not enough.</p>
+         The easiest way to pick a random user that is chatting during your YouTube Live Transmission
+        
        </S.Description>
       
      
@@ -125,7 +121,10 @@ const Main = () =>{
        onChange={handleInputChange}
        name="url" 
        placeholder="https://www.youtube.com/watch?v=XXXXXXXX" 
-       helper="Copy your Youtube Live Url from the Address Bar and Paste It Here (Format https://www.youtube.com/watch?v=XXXXXXXX )"  />    
+       helper="Copy your Youtube Live Url from the Address Bar and Paste It Here (Format https://www.youtube.com/watch?v=XXXXXXXX )"  
+       />    
+
+      <S.Instrution>ATTENTION: Warn your participants! To be eligible, the user MUST be chatting. Only be watching the live is not enough.</S.Instrution>
 
       <Button disabled={loading} onClick={handleButtonClick}>{!loading ? "Pick a User" : "Processing"}</Button>
      

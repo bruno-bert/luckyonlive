@@ -10,15 +10,16 @@
 [x] publish on Vercel
 
 
+
 ### Other Sprints
 #### Front-End
+[ ] change design similar to cypress.io site
 [ ] create a footer of type(made with love by ...)
 [ ] implement localization to portuguese and spanish
+[ ] buy domain
 [ ] implement ThemeProvider
-[ ] check for other opportunitites to add env variables
 
 #### Back-End
-[ ] use axios get instead of pupeteer to improve performance
 [ ] implement process to Twitch TV 
 
 ##to check

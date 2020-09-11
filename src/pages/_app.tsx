@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { SWRConfig } from 'swr'
 import {NextSeo} from "next-seo"
 
-import ReactNotification, { store } from 'react-notifications-component'
+import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import axios from 'axios';
 
