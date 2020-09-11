@@ -4,12 +4,13 @@ export const Wrapper = styled.div`
 
 border-radius: 10px;
 
-width: 80%;
+width: 90%;
 margin: 3rem auto;
-background: #182534;
-padding: 2rem 15rem;
-box-shadow:  20px 20px 60px #141f2c, 
-             -20px -20px 60px #1c2b3c;
+padding: 2rem;
+
+background: #2b323b;
+box-shadow:  20px 20px 60px #252b32, 
+             -20px -20px 60px #313a44;
 
 & > * {
     color: #fefefe;
@@ -21,6 +22,7 @@ h3{
 }
 
 p{
+    margin-top: 2rem;
     font-size: 2.5rem;
 }
 

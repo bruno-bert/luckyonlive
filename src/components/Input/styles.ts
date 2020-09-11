@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     display: block;
     margin: 0;
     padding: 1.2rem 1.6rem;
-    color: white;
+    color: #fefefe;
     text-align: center;
     background-color: #363534;
     width: 100%;
@@ -31,9 +31,17 @@ export const Wrapper = styled.div`
   input:focus {
     outline: none;
     border: 2px solid #FE4F60;
+
+    &::placeholder{
+      color: #363534;
+    }
   }
 
   p {
       font-size: 1.2rem;
+
+      @media (max-width: 600px){
+      font-size: 1rem;
+  }
   }
 `

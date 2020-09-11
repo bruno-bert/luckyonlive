@@ -15,6 +15,13 @@ export const Wrapper = styled.main`
     margin-top: 4rem; 
   }
 
+  @media (max-width: 600px){
+  
+    & > * {
+    margin-top: 3rem; 
+  }
+}
+
 
 
 `
@@ -26,7 +33,7 @@ export const Title = styled.h1`
   line-height: 7rem;
 
   @media (max-width: 600px){
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 5rem;
   }
  
@@ -40,6 +47,8 @@ export const Instrution = styled.p`
     padding: 0.8rem 1.5rem;
     font-size: 1.2rem;
     margin: 2rem auto;
+
+
 `
 
 export const Description = styled.div`
