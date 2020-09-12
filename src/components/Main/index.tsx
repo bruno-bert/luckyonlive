@@ -3,13 +3,18 @@ import Input from "../Input"
 import Button from "../Button"
 import Card from "../Card"
 
-import { useState, useRef} from "react"
+import { useState } from "react"
 import axios from "axios"
 import { store } from 'react-notifications-component'
 import Loader from 'react-loader-spinner'
+import { HomeLanguageType } from 'locales/types'
 
-const Main = () =>{
+export type MainProps = {
+  lang: HomeLanguageType
+}
 
+const Main = ({lang} : MainProps) =>{
+  
   const [user, setUser] = useState<string | null>(null)
   const [url, setUrl] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
@@ -24,7 +29,7 @@ const Main = () =>{
     e.preventDefault()
     let message
     if (!url) {
-      message = 'Please type the url of the Live Transmission'
+      message = lang.urlRequired
       store.addNotification({
         type: "info",
         container: "top-right",
@@ -39,7 +44,7 @@ const Main = () =>{
     }
  
     if (/^(http(s)??\:\/\/)?(www\.)?((youtube\.com\/watch\?v=)|(youtu.be\/))([a-zA-Z0-9\-_])+$/.test(url)===false) {
-      message = 'URL format is invalid'
+      message = lang.urlInvalid
      
       store.addNotification({
         type: "warning",
@@ -58,9 +63,7 @@ const Main = () =>{
     setLoading(true)
    
       axios.post('/request', {
-        url
-     // axios.post('/bash', {
-     //   command: url
+        url   
       }).then(response =>{
         
         
@@ -68,11 +71,10 @@ const Main = () =>{
 
         if (response.data.result){
           setUser(response.data.result)
-          setError(null)
-          //setUrl('')
+          setError(null)         
         } else {
 
-          message = 'It seems this Live is not happening anymore or the Live chat is disabled'
+          message = lang.chatDisabled
           store.addNotification({
             type: "warning",
             container: "top-right",
@@ -99,7 +101,6 @@ const Main = () =>{
       })
       .finally(()=>{
         setLoading(false)
-        //inputRef.current?.focus()
       })
     } 
    
@@ -108,16 +109,13 @@ const Main = () =>{
   return (
     <S.Wrapper>
      
-      <S.Logo
-        src="/img/logo.svg"
-        alt="Imagem de uma caixa de presentes vermelha com um laço azul claro."
-      />
-       <S.Title>Welcome to Lucky In Live!</S.Title>
+  
+<S.Title>{lang.headline}</S.Title>
+
+
 
        <S.Description>
-         Easily pick a random user that is chatting during your YouTube Live Transmission
-         <br />
-         <p><b>ATTENTION:</b> Warn your participants! To be eligible, the user <b>MUST be chatting</b>. Only be watching the live is not enough.</p>
+        {lang.subHeadline}
        </S.Description>
       
      
@@ -125,11 +123,14 @@ const Main = () =>{
        onChange={handleInputChange}
        name="url" 
        placeholder="https://www.youtube.com/watch?v=XXXXXXXX" 
-       helper="Copy your Youtube Live Url from the Address Bar and Paste It Here (Format https://www.youtube.com/watch?v=XXXXXXXX )"  />    
+       helper={lang.helper}  
+       />    
 
-      <Button disabled={loading} onClick={handleButtonClick}>{!loading ? "Pick a User" : "Processing"}</Button>
+  <S.Instrution>{lang.instruction}</S.Instrution>
+
+      <Button disabled={loading} onClick={handleButtonClick}>{!loading ? lang.buttonNormal : lang.buttonLoading}</Button>
      
-      {user && <Card description="And The Winner is...">{user}</Card>}
+      {user && <Card description={lang.resultHeader}>{user}</Card>}
 
       {loading &&  <Loader
 	     type="ThreeDots"

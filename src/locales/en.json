@@ -1,0 +1,15 @@
+{
+    "title": "Lucky In Live - Pick a Random User During a Youtube Live Transmission",
+    "description": "Easily pick a random participant during youtube live transmission",
+    "locale": "en_US",
+    "headline": "Random drawing of Youtube Live Participants",
+    "subHeadline": " The easiest way to pick a random user that is chatting during your YouTube Live Transmission",
+    "helper": "Copy your Youtube Live Url from the Address Bar and Paste It Here (Format https://www.youtube.com/watch?v=XXXXXXXX )",
+    "buttonNormal": "Pick a Participant",
+    "buttonLoading": "Processing",
+    "resultHeader": "And The Winner is...",
+    "chatDisabled": "It seems this Live is not happening anymore or the Live chat is disabled",
+    "urlInvalid": "URL format is invalid",
+    "urlRequired": "Please type the url of the Live Transmission",
+    "instruction": "ATTENTION: Warn your participants! To be eligible, the user MUST be chatting. Only be watching the live is not enough."
+}

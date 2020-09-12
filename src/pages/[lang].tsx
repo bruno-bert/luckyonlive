@@ -11,13 +11,13 @@ export type HomeProps = {
 }
 
 
-const Home = ( {lang}: HomeProps ) => {
+const Home = ( {lang}  : HomeProps) => {
 
   
   return (
     <>
-      
-      <NextSeo
+
+<NextSeo
         title={lang.title}
         description={lang.description}
         canonical="https://luckynlive.com/"
@@ -40,10 +40,21 @@ const Home = ( {lang}: HomeProps ) => {
  
 }
 
+export async function getStaticPaths() {
 
-export const getStaticProps: GetStaticProps = async () => {
-  const lang = require(`../locales/pt.json`)
-  return  { props: { lang } }
+  const paths = [
+    {params: {lang: 'pt'}},
+    {params: {lang: 'en'}}
+  ]
+
+  return {paths , fallback: false }
+}
+
+
+
+export const getStaticProps: GetStaticProps = async ({params}) => {
+  const lang = require(`../locales/${params!.lang}.json`)
+  return { props: { lang } }
 }
 
 export default Home
