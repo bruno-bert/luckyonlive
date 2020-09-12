@@ -6,7 +6,8 @@ export default {
   component: Main,
   args: {
     title: 'title default',
-    description: 'description default'
+    description: 'description default',
+   
   }
 } as Meta
 

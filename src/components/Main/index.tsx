@@ -13,6 +13,7 @@ export type MainProps = {
   lang: HomeLanguageType
 }
 
+
 const Main = ({lang} : MainProps) =>{
   
   const [user, setUser] = useState<string | null>(null)
@@ -145,5 +146,10 @@ const Main = ({lang} : MainProps) =>{
   )
 
 } 
+
+Main.defaultProps = {
+  lang: {}
+}
+
 
 export default Main
