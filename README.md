@@ -13,7 +13,7 @@
 
 ### Other Sprints
 #### Front-End
-[ ] change design similar to cypress.io site
+[x] change design similar to cypress.io site
 [ ] create a footer of type(made with love by ...)
 [ ] implement localization to portuguese and spanish
 [ ] buy domain

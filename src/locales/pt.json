@@ -1,0 +1,15 @@
+{
+    "title": "Lucky In Live - Selecione um participante durante uma live do YouTube",
+    "description": "Facilmente selecione um usuário aleatoriamente durante uma live do YouTube",
+    "locale": "pt_BR",
+    "headline": "Sorteie um Participante em sua Live",
+    "subHeadline": " A forma mais simples de selecionar um usuário que estiver no chat em uma Live do Youtube",
+    "helper": "Copie o endereço de sua live da barra de endereços e cole aqui (Formato https://www.youtube.com/watch?v=XXXXXXXX )",
+    "buttonNormal": "Selecionar Participante",
+    "buttonLoading": "Processando",
+    "resultHeader": "E o vencedor é...",
+    "chatDisabled": "Parece que esta live não está mais acontecendo ou o chat ao vivo está desabilitado",
+    "urlInvalid": "Formato do Endereço inválido",
+    "urlRequired": "Por Favor digite o endereço da live",
+    "instruction": "ATENÇÃO: Avise os participantes! Para ser selecionado, o usuário deve estar participando ativamente do chat ao vivo. Apenas estar na Live não é suficiente."
+}

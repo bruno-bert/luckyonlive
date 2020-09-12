@@ -1,5 +1,6 @@
 import * as S from './styles'
 
+
 export type HeroProps = {
   children?: React.ReactNode | HTMLCollection | string
 }
